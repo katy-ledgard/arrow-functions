@@ -97,6 +97,7 @@ const newObject = (array) => ({
 // Refactor each function into an arrow function.
 // Write your solutions on a single line wherever possible.
 
+// 1
 let sum = function (a, b, c, d) {
   return a + b + c + d;
 };
@@ -104,10 +105,13 @@ let sum = function (a, b, c, d) {
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(sum(1, 2, 3, 4));
 
-//REAFACTURED:
+//REFACTORED:
 
 let sum2 = (a, b, c, d) => a + b + c + d
 console.log(sum2(1, 2, 3, 4));
+
+
+// 2
 
 let objectLit = function () {
   return {
@@ -118,7 +122,18 @@ let objectLit = function () {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(objectLit());
+console.log(objectLit());
+
+//REFACTORED:
+
+let objectLit2 = () => ({
+    key1: "value1",
+    key2: "value2",
+    key3: "value3",
+})
+console.log(objectLit2());
+
+// 3
 
 let sumAndProduct = function (a, b) {
   let sum = a + b;
@@ -129,12 +144,20 @@ let sumAndProduct = function (a, b) {
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(sumAndProduct(3, 9));
 
+//REFACTORED:
+
+//4
+
 let message = function (name) {
   return `Hello, ${name}!`;
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(message('Allie'));
+
+//REFACTORED:
+
+//5
 
 let Student = function (name, age, hometown) {
   this.name = name;
@@ -148,11 +171,16 @@ let joe = new Student("Joe Schmoe", 100, "Anytown, USA");
 // Note that the arrow function will cause this code to break!
 // console.log(joe);
 
+//REFACTORED:
+
+//5.2
+
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
 Student.prototype.greeting = function () {
   return `Hi, my name is ${this.name}`;
 };
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
