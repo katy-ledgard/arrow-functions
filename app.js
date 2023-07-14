@@ -21,7 +21,7 @@ const theNewWay = (course) => {
 
 // STEP 3
 // When we have one parameter, we can omit the parentheses
-const withoutParens = (course) => {
+const withoutParens = course => {
   return `I am currently enrolled in ${course}`;
 };
 
@@ -97,12 +97,21 @@ const newObject = (array) => ({
 // Refactor each function into an arrow function.
 // Write your solutions on a single line wherever possible.
 
+// 1
 let sum = function (a, b, c, d) {
   return a + b + c + d;
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(sum(1, 2, 3, 4));
+
+//REFACTORED:
+
+let sum2 = (a, b, c, d) => a + b + c + d
+// console.log(sum2(1, 2, 3, 4));
+
+
+// 2
 
 let objectLit = function () {
   return {
@@ -115,6 +124,17 @@ let objectLit = function () {
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(objectLit());
 
+//REFACTORED:
+
+let objectLit2 = () => ({
+    key1: "value1",
+    key2: "value2",
+    key3: "value3",
+})
+// console.log(objectLit2());
+
+// 3
+
 let sumAndProduct = function (a, b) {
   let sum = a + b;
   let product = a * b;
@@ -124,12 +144,30 @@ let sumAndProduct = function (a, b) {
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(sumAndProduct(3, 9));
 
+//REFACTORED:
+
+let sumAndProduct2 = (a, b) => {
+    let sum = a + b;
+    let product = a * b;
+    return [sum, product];   
+}
+// console.log(sumAndProduct2(3, 9))
+
+//4
+
 let message = function (name) {
   return `Hello, ${name}!`;
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(message('Allie'));
+
+//REFACTORED:
+
+let message2 = name => `Hello, ${name}!`;
+// console.log(message2('Allie'))
+
+//5
 
 let Student = function (name, age, hometown) {
   this.name = name;
@@ -143,15 +181,37 @@ let joe = new Student("Joe Schmoe", 100, "Anytown, USA");
 // Note that the arrow function will cause this code to break!
 // console.log(joe);
 
+//REFACTORED (broken):
+
+// let Student2 = (name, age, hometown) =>  {
+//     this.name = name;
+//     this.age = age;
+//     this.hometown = hometown;
+//   };
+
+//   let jo = new Student2("Jo Schmo", 100, "Anytown, USA");
+//   console.log(jo);
+
+//5.2
+
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
 Student.prototype.greeting = function () {
   return `Hi, my name is ${this.name}`;
 };
 
+
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
 // console.log(joe.greeting());
+
+//REFACTORED (broken):
+
+// Student.prototype.greeting = () => `Hi, my name is ${this.name}`;
+// console.log(joe.greeting());
+
+//5.3
+
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -162,6 +222,12 @@ Student.courseName = function () {
 // TODO: Uncomment the following line of code to see the output in the browser console
 // console.log(Student.courseName());
 
+//REFACTORED 
+
+Student.courseName = () => "This student is enrolled in Code 301.";
+// console.log(Student.courseName());
+
+
 // STEP 11
 // How do arrow functions affect constructor functions?
 Student.prototype.scope = function () {
@@ -169,17 +235,19 @@ Student.prototype.scope = function () {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scope();
+joe.scope();
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scopeArrow();
+joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+// "this" is the instance of the joe object from the student constructor function.
+
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// "this" is referring to the global scope of this, and not the instance of an object in the constructor function.
+
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// "this" is different when an arrow function is called because "this" does not change to become the object we are building in constructor functions, but rather refers to the global scope of "this".
