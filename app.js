@@ -179,9 +179,18 @@ let joe = new Student("Joe Schmoe", 100, "Anytown, USA");
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
 
-//REFACTORED:
+//REFACTORED (broken):
+
+// let Student2 = (name, age, hometown) =>  {
+//     this.name = name;
+//     this.age = age;
+//     this.hometown = hometown;
+//   };
+
+//   let jo = new Student2("Jo Schmo", 100, "Anytown, USA");
+//   console.log(jo);
 
 //5.2
 
@@ -194,7 +203,15 @@ Student.prototype.greeting = function () {
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
+console.log(joe.greeting());
+
+//REFACTORED (broken):
+
+// Student.prototype.greeting = () => `Hi, my name is ${this.name}`;
 // console.log(joe.greeting());
+
+//5.3
+
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -203,7 +220,13 @@ Student.courseName = function () {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
+
+//REFACTORED 
+
+Student.courseName = () => "This student is enrolled in Code 301.";
+console.log(Student.courseName());
+
 
 // STEP 11
 // How do arrow functions affect constructor functions?
