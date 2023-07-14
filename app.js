@@ -21,7 +21,7 @@ const theNewWay = (course) => {
 
 // STEP 3
 // When we have one parameter, we can omit the parentheses
-const withoutParens = (course) => {
+const withoutParens = course => {
   return `I am currently enrolled in ${course}`;
 };
 
@@ -102,7 +102,12 @@ let sum = function (a, b, c, d) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sum(1, 2, 3, 4));
+console.log(sum(1, 2, 3, 4));
+
+//REAFACTURED:
+
+let sum2 = (a, b, c, d) => a + b + c + d
+console.log(sum2(1, 2, 3, 4));
 
 let objectLit = function () {
   return {
