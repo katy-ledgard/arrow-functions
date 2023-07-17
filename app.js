@@ -250,4 +250,4 @@ joe.scopeArrow();
 // "this" is referring to the global scope of this, and not the instance of an object in the constructor function.
 
 // 3. Explain why "this" is different when an arrow function is used.
-// "this" is different when an arrow function is called because "this" does not change to become the object we are building in constructor functions, but rather refers to the global scope of "this".
+// "this" is different when an arrow function is called because "this" does not change to become the object we are building in constructor functions. Arrow functions do not have 'this' itself, but rather looks to oustide the arrow function for what 'this' is. 
